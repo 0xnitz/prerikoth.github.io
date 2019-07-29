@@ -6,6 +6,7 @@ body, html{
   font-weight:400;
   line-height:1.8em;
   color:#666;
+  scroll-behavior: smooth;
 }
 
 .title {
@@ -33,11 +34,6 @@ body, html{
 
 .pimg2 {
   min-height: 400px;
-}
-
-.pimg3{
-  background-image:url('../img/image3.jpg');
-  min-height:400px;
 }
 
 .section{
@@ -95,6 +91,7 @@ body, html{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 120%;
+  color:white;
 }
 
 table, th, td {
@@ -110,9 +107,46 @@ th {
   text-align: left;
 }
 
-
-
 #table_title {
   text-align: center;
   color:black;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+}
+
+ul {
+  position: absolute;
+  width: 0%;
+  top: 44.5%;
+}
+
+table {
+  font-family: 'Abel', cursive;
+  font-size: 120%;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  margin: 0%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;  
+}
+
+A:hover {
+  opacity: .5;
+}
+
+.read_more {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 40px;
+  left: 48.5%;
 }
