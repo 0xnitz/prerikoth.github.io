@@ -115,6 +115,8 @@ th {
 .icon {
   height: 40px;
   width: 40px;
+  position: absolute;
+  left:0%;
 }
 
 ul {
