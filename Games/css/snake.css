@@ -41,7 +41,7 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: darkred;
+    color: gray;
 }
 
 .credit {

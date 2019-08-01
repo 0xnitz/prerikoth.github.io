@@ -9,11 +9,12 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: darkred;
+    color: gray;
 }
 
 .home {
-    font-size: 150%;
+    font-family: 'Dancing Script', crusive;
+    font-size: 200%;
     position: absolute;
     right: 50%;
 }
@@ -34,11 +35,12 @@ a:hover {
     list-style: none;
 }
 
-#games img {
+.game{
     transition: all .2s ease-in-out;
     box-shadow: -5px 5px 25px 0 rgba(0,0,0,.7);
+    margin: 20px;
 }
 
-#games img:hover {
+.game:hover {
     transform: scale(1.1);
 }
