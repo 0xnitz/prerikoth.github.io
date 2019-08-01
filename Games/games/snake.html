@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/snake.css">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Dancing+Script|Lobster&display=swap" rel="stylesheet">
+</head>
+<body style="background:url(../img/game-background.jpg)">
+<header>
+    <a class="home" href="../main.html">Game Room</a>
+</header>
+<canvas id="game_canvas" width="800" height="800"></canvas>
+<h2 class="score" id="score">Score: 0</h2>
+<h2 class="score" id="max_score">Max Score: 0</h2>
+<div style="display:none;">
+    <img id="apple" src="../img/apple.jpg" width="300" height="227">
+  </div>
+<script>
+window.onload=function() {
+    canv = document.getElementById("game_canvas");
+    ctx = canv.getContext("2d");
+    document.addEventListener("keydown",keyPush);
+    setInterval(gameLoop, 1000/15);
+}
+
+px=py=10; //player position
+tc=40; //length of the side of the board
+gs=20; //scale value of the drawings
+ax=ay=15; //apple's initial position
+speed_x = speed_y = 0; //player's x and y speeds
+body=[]; //snake body
+tail=3; //snake's initial length
+score=0; //score tracker
+scores=[]
+
+function gameLoop() { //This is the main game loop that's called 15 times a second.
+    const apple = document.getElementById('apple');
+    document.getElementById('score').innerHTML='Score: ' + score;
+
+    //Updating the snake's position
+    px += speed_x;
+    py += speed_y;
+
+    //making the snake wrap around the board
+    if (px < 0) px = tc - 1;
+    if (px > tc - 1) px = 0;
+    if (py < 0) py = tc - 1;
+    if (py > tc - 1) py = 0;
+
+    //Game board
+    ctx.fillStyle="black";
+    ctx.fillRect(0,0,canv.width,canv.height);
+
+    //Drawing the snake
+    ctx.fillStyle="lime";
+    for(let i=0;i<body.length;i++) {
+        ctx.fillRect(body[i].x*gs,body[i].y*gs,gs-2,gs-2);
+        scores.push(score);
+        if (scores.length > 0) document.getElementById('max_score').innerHTML='Max Score: ' + Math.max.apply(null, scores);
+        else document.getElementById('max_score').innerHTML='Max Score: 0';
+        
+        if(body[i].x==px && body[i].y==py) {
+            tail=3;
+            score=0;
+        } else scores.pop();
+    }
+    body.push({x:px,y:py});
+    while(body.length > tail) body.shift();
+
+    //Drawing the apple
+    if (ax==px && ay==py) {
+        score++;
+        console.log(score);
+        tail++;
+        ax=Math.floor(Math.random()*tc);
+        ay=Math.floor(Math.random()*tc);
+    }
+    
+    apple.addEventListener('load', e => {
+        ctx.drawImage(apple, ax*gs,ay*gs,40,40);
+    });
+    
+    ctx.fillStyle="red";
+    ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+}
+
+function keyPush(evt) { //This function detects a key press evenet and changes the speed of the snake.
+    switch(evt.keyCode) {
+        case 37:
+            speed_x=-1;speed_y=0;
+            break;
+        case 38:
+            speed_x=0;speed_y=-1;
+            break;
+        case 39:
+            speed_x=1;speed_y=0;
+            break;
+        case 40:
+            speed_x=0;speed_y=1;
+            break;
+    }
+}
+
+</script>
+<p class="credit">Credit to <a href="https://www.youtube.com/channel/UC15WSgcM_5tmN6JRbhA4UaQ">Chris DeLeon</a> for the game</p>
+</body>
+</html>

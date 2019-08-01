@@ -1,0 +1,44 @@
+html, body {
+    font-family: 'Abel', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: darkred;
+}
+
+.home {
+    font-size: 150%;
+    position: absolute;
+    right: 50%;
+}
+
+.website {
+    font-size: 150%;
+    padding-right: 0.5%;
+    position: absolute;
+    right: 0%;
+}
+
+.icon {
+    max-width: 3%;
+    height: auto;
+}
+
+#games {
+    list-style: none;
+}
+
+#games img {
+    transition: all .2s ease-in-out;
+    box-shadow: -5px 5px 25px 0 rgba(0,0,0,.7);
+}
+
+#games img:hover {
+    transform: scale(1.1);
+}

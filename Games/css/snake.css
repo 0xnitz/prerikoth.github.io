@@ -1,0 +1,51 @@
+html, body {
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Abel', cursive;
+    margin:0;
+}
+
+.home {
+    font-family: 'Abel', cursive;
+    font-size: 150%;
+}
+
+.score {
+    font-size: 190%;
+    color: #666;
+    position: absolute;
+    top: 10%;
+}
+
+#max_score {
+    position: absolute;
+    top: 15%;
+}
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 800px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: darkred;
+}
+
+.credit {
+    font-size: 130%;
+    position: absolute;
+    bottom: 0%;
+}
