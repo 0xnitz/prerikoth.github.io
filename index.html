@@ -10,6 +10,32 @@
   <link rel="shortcut icon" type="image/x-icon" href="img/logos/logo.png" />
 </head>
 <body>
+  <!--CSS Spinner credit: https://tobiasahlin.com/spinkit/-->
+  <div class="spinner-wrapper">
+      <div class="loading-wrapper">
+      <h1 id="loading">Loading...</h1>
+      </div>
+      <div class="spinner">
+          
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <script>
+              function sleep(delay) {
+                  var start = new Date().getTime();
+                  while (new Date().getTime() < start + delay);
+              }
+              $(document).ready(function() {
+              $(window).on("load", function() {
+              preloaderFadeOutTime = 2000;
+              function hidePreloader() {
+              var preloader = $('.spinner-wrapper');
+              preloader.fadeOut(preloaderFadeOutTime);
+              }
+              hidePreloader();
+              });
+              });
+          </script>
+      </div>
+      </div>
   <div class="pimg1">
     <div class="ptext">
       <span class="border">
@@ -24,6 +50,8 @@
         <img class="icon" src="img/logos/email.png"/>
       </a></li>
     </ul>
+
+    <div class="gameroom"><a href="https://prerikoth.github.io/Games/main.html" target="_blank"><img class="icon" src="img/logos/gameroom.png"></a></div>
 
     <div class="centered">
       <a href="#middle"><img class="read_more" src="img/down_arrow.png"></a>
@@ -60,6 +88,11 @@
               <td><a href="https://github.com/dindibo/Krypton" target="_blank">Android App</a></td>
               <td>A simple MMO game developed as my senior year project.</td>
               <td>C#</td>
+            </tr>
+          <tr>
+              <td><a href="https://prerikoth.github.io/Games/main.html" target="_blank">Game Room</a></td>
+              <td>Website for browsing simple online games</td>
+              <td>HTML/CSS</td>
             </tr>
         </table>
   </section>

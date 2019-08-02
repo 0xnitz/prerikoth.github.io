@@ -9,6 +9,29 @@
 </head>
 
 <body>
+    <!--CSS Spinner credit: https://tobiasahlin.com/spinkit/-->
+  <div class="spinner-wrapper">
+        <div class="spinner">
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script>
+                function sleep(delay) {
+                    var start = new Date().getTime();
+                    while (new Date().getTime() < start + delay);
+                }
+                $(document).ready(function() {
+                $(window).on("load", function() {
+                preloaderFadeOutTime = 2000;
+                function hidePreloader() {
+                var preloader = $('.spinner-wrapper');
+                preloader.fadeOut(preloaderFadeOutTime);
+                }
+                hidePreloader();
+                });
+                });
+            </script>
+        </div>
+        </div>
     <a class="Home" href="index.html">Home</a>
     <h1>Contact Information</h1>
     <ul>
