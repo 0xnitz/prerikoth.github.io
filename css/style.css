@@ -142,7 +142,7 @@ a {
 }
 
 A:hover {
-  opacity: .5;
+  text-decoration: underline;
 }
 
 .read_more {
@@ -168,14 +168,13 @@ A:hover {
 .gameroom {
   position: absolute;
   top: 50%;
-  right: 0%;
+  right: 1%;
 }
 
 .gameroom img {
   margin: 0;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 .spinner {
@@ -227,23 +226,27 @@ A:hover {
 }
 
 footer {
-  min-height: 15%;
+  min-height: 5%;
   font-family: 'Abel', cursive;
   font-size: 150%;
   background-color: rgba(0,0,0,.85);
   color: white;
 }
 
-footer img {
-  filter: grayscale(100%);
-}
-
 #footer {
   text-align: center;
   opacity: .75;
+  vertical-align: middle;
 }
 
 h3 {
-  vertical-align: middle;
   margin: 0;
+}
+
+.animate_big {
+  transition: all .2s ease-in-out;
+}
+
+.animate_big:hover {
+  transform: scale(1.25);
 }
