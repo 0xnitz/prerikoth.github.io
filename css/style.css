@@ -225,3 +225,25 @@ A:hover {
   font-size: 200%;
   font-family: cursive;
 }
+
+footer {
+  min-height: 15%;
+  font-family: 'Abel', cursive;
+  font-size: 150%;
+  background-color: rgba(0,0,0,.85);
+  color: white;
+}
+
+footer img {
+  filter: grayscale(100%);
+}
+
+#footer {
+  text-align: center;
+  opacity: .75;
+}
+
+h3 {
+  vertical-align: middle;
+  margin: 0;
+}
